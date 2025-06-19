@@ -1,99 +1,125 @@
 <!DOCTYPE html><html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ZOOMMOBILE - Loja Oficial</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Roboto', sans-serif; background: #f9f9f9; color: #333; }
-    header { background-color: #007AFF; color: white; padding: 1rem; text-align: center; font-size: 1.5rem; font-weight: bold; }
-    .top-bar { display: flex; justify-content: space-between; align-items: center; background: #fff; padding: 0.5rem 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    .search { flex: 1; margin: 0 1rem; }
-    .search input { width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 5px; }
-    .cart { position: relative; font-weight: bold; }
-    .cart::after { content: attr(data-count); position: absolute; top: -10px; right: -10px; background: red; color: white; border-radius: 50%; padding: 2px 6px; font-size: 0.75rem; }
-    h2 { padding: 1rem; background: #eee; font-size: 1.2rem; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; padding: 1rem; }
-    .card { background: white; padding: 1rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center; transition: transform 0.2s; }
-    .card:hover { transform: scale(1.02); }
-    .card img { max-width: 100%; border-radius: 8px; height: 180px; object-fit: cover; margin-bottom: 0.5rem; }
-    .card h4 { font-size: 1rem; margin-bottom: 0.3rem; }
-    .card p { font-size: 0.9rem; color: #555; margin-bottom: 0.5rem; }
-    .card .price { font-weight: bold; color: #007AFF; }
-    .card .old-price { text-decoration: line-through; color: #999; font-size: 0.85rem; }
-    .card button { margin-top: 0.5rem; background: #007AFF; color: white; border: none; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer; }
+    body { font-family: 'Roboto', sans-serif; background: #f2f2f2; color: #333; }
+    header {
+      background: #007bff;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      padding: 0.5rem 1rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .search input {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .cart {
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+    h2 {
+      padding: 1rem;
+      background: #eaeaea;
+      font-size: 1.3rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+    }
+    .card {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.02);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+    }
+    .card h4 { font-size: 1.1rem; margin-bottom: 0.3rem; }
+    .card p { font-size: 0.95rem; color: #666; }
+    .card .price { color: #007bff; font-weight: bold; font-size: 1.1rem; }
+    .card .old-price { text-decoration: line-through; font-size: 0.85rem; color: #999; }
+    .card button {
+      margin-top: 0.5rem;
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
   <header>ZOOMMOBILE</header>
   <div class="top-bar">
     <div class="search">
-      <input type="text" placeholder="Buscar modelo...">
+      <input type="text" placeholder="🔍 Buscar modelo...">
     </div>
-    <div class="cart" data-count="0">🛒 Carrinho</div>
+    <div class="cart">🛒 Carrinho (0)</div>
   </div>  <h2>📱 Samsung</h2>
   <div class="grid">
     <div class="card">
-      <img src="https://m.media-amazon.com/images/I/71yzJoE7WlL._AC_SL1500_.jpg" alt="Galaxy S23">
+      <img src="https://images.kabum.com.br/produtos/fotos/464712/smartphone-samsung-galaxy-s23-5g-128gb-8gb-ram-octa-core-camera-tripla-50mp-tela-infinita-de-6-1-verde-sm-s911bzgszto_1686249015_g.jpg" alt="Galaxy S23">
       <h4>Galaxy S23</h4>
       <p class="old-price">R$ 5.999</p>
       <p class="price">R$ 4.799</p>
       <button>Comprar</button>
     </div>
-    <div class="card">
-      <img src="https://m.media-amazon.com/images/I/61J8A6jdwZL._AC_SL1000_.jpg" alt="Galaxy A14">
-      <h4>Galaxy A14</h4>
-      <p class="old-price">R$ 1.499</p>
-      <p class="price">R$ 1.199</p>
-      <button>Comprar</button>
-    </div>
   </div>  <h2>📱 Motorola</h2>
   <div class="grid">
     <div class="card">
-      <img src="https://m.media-amazon.com/images/I/71JtHbgc99L._AC_SL1500_.jpg" alt="Moto G84">
+      <img src="https://images.kabum.com.br/produtos/fotos/470567/smartphone-motorola-moto-g84-5g-256gb-8gb-ram-dual-chip-vermelho_1694096359_g.jpg" alt="Moto G84">
       <h4>Moto G84</h4>
       <p class="old-price">R$ 1.999</p>
       <p class="price">R$ 1.599</p>
       <button>Comprar</button>
     </div>
-    <div class="card">
-      <img src="https://m.media-amazon.com/images/I/71qMFoKqgKL._AC_SL1500_.jpg" alt="Edge 40">
-      <h4>Edge 40</h4>
-      <p class="old-price">R$ 3.299</p>
-      <p class="price">R$ 2.639</p>
-      <button>Comprar</button>
-    </div>
   </div>  <h2>📱 Xiaomi / Redmi</h2>
   <div class="grid">
     <div class="card">
-      <img src="https://m.media-amazon.com/images/I/61aTfE+vgrL._AC_SL1500_.jpg" alt="Redmi Note 12">
+      <img src="https://images.kabum.com.br/produtos/fotos/453753/smartphone-redmi-note-12-xiaomi-128gb-4gb-ram-azul_1682009802_g.jpg" alt="Redmi Note 12">
       <h4>Redmi Note 12</h4>
       <p class="old-price">R$ 1.699</p>
       <p class="price">R$ 1.359</p>
       <button>Comprar</button>
     </div>
-    <div class="card">
-      <img src="https://m.media-amazon.com/images/I/61Q0e6dA9tL._AC_SL1500_.jpg" alt="POCO X5">
-      <h4>POCO X5</h4>
-      <p class="old-price">R$ 1.899</p>
-      <p class="price">R$ 1.519</p>
-      <button>Comprar</button>
-    </div>
   </div>  <h2>📱 iPhone</h2>
   <div class="grid">
     <div class="card">
-      <img src="https://m.media-amazon.com/images/I/61bK6PMOC3L._AC_SL1500_.jpg" alt="iPhone 14 Pro Max">
+      <img src="https://images.kabum.com.br/produtos/fotos/467509/iphone-14-pro-max-apple-128gb-preto-espacial-tela-6-7-48mp-ios_1692198415_g.jpg" alt="iPhone 14 Pro Max">
       <h4>iPhone 14 Pro Max</h4>
       <p class="old-price">R$ 6.999</p>
       <p class="price">R$ 5.599</p>
-      <button>Comprar</button>
-    </div>
-    <div class="card">
-      <img src="https://m.media-amazon.com/images/I/71T5NVOgbpL._AC_SL1500_.jpg" alt="iPhone 13">
-      <h4>iPhone 13</h4>
-      <p class="old-price">R$ 5.599</p>
-      <p class="price">R$ 4.479</p>
       <button>Comprar</button>
     </div>
   </div>
