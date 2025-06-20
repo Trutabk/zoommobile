@@ -1,116 +1,119 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ZOOMMOBILE - LanÃ§amentos</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ZOOMMOBILE</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; background: #f4f4f4; }
-    header { background: #004aad; color: white; padding: 1rem; text-align: center; font-size: 1.8rem; font-weight: bold; }
-    section { padding: 1rem; }
-    h2 { color: #004aad; margin-top: 2rem; font-size: 1.3rem; }
-    .produtos { display: flex; overflow-x: auto; gap: 1rem; padding: 1rem 0; }
-    .card { min-width: 200px; background: white; border-radius: 10px; box-shadow: 0 0 10px #ccc; padding: 1rem; text-align: center; }
-    .card img { width: 100%; height: 180px; object-fit: contain; }
-    .card .nome { font-weight: bold; margin-top: 0.5rem; }
-    .card .preco { color: #888; text-decoration: line-through; }
-    .card .desconto { color: #e60000; font-weight: bold; }
-    .card button { margin-top: 0.5rem; background: #004aad; color: white; border: none; padding: 0.5rem; border-radius: 5px; cursor: pointer; width: 100%; }
-    .card button:hover { background: #002f70; }
+    body { font-family: Arial, sans-serif; margin: 0; background: #f5f5f5; }
+    header { background: #007BFF; padding: 1rem; text-align: center; color: white; font-size: 1.8rem; font-weight: bold; }
+    .topbar { background: white; padding: 10px; display: flex; justify-content: space-between; align-items: center; }
+    .topbar input { width: 70%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; }
+    .topbar span { font-weight: bold; }
+    .banner { background: #007bff; color: white; padding: 10px; text-align: center; font-weight: bold; }
+    h2 { margin-left: 10px; margin-top: 20px; color: #333; }
+    .row { display: flex; overflow-x: auto; padding: 1rem; gap: 1rem; }
+    .card {
+      min-width: 180px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 10px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .card img { width: 100%; height: 160px; object-fit: contain; }
+    .card .nome { font-weight: bold; margin: 0.5rem 0; }
+    .preco-antigo { color: #999; text-decoration: line-through; }
+    .preco-novo { color: #007BFF; font-weight: bold; font-size: 1.1rem; }
+    .btn { background: #007BFF; color: white; border: none; padding: 8px; border-radius: 6px; width: 100%; cursor: pointer; }
   </style>
 </head>
 <body>
-  <header>ZOOMMOBILE â€¢ Destaques das Marcas</header>
 
-  <!-- Exemplo: Samsung -->
-  <section>
-    <h2>Samsung</h2>
-    <div class="produtos">
+<header>ZOOMMOBILE</header>
+<div class="topbar">
+  <input type="text" placeholder="ðŸ” Buscar modelo..."/>
+  <span>ðŸ›’ Carrinho (0)</span>
+</div>
+<div class="banner">Aproveite atÃ© 20% de desconto nos Ãºltimos lanÃ§amentos</div>
 
-      <div class="card">
-        <img src="https://images.samsung.com/is/image/samsung/p6pim/br/galaxy-s23/gallery/br-galaxy-s23-ultra-s918-sm-s918bzkgzto-thumb-535120190?$216_216_PNG$" alt="Samsung 1">
-        <div class="nome">Galaxy S10 Ultra</div>
-        <div class="preco">R$ 7999</div>
-        <div class="desconto">R$ 6399</div>
-        <button>Ver Detalhes</button>
-        <button>Adicionar ao Carrinho</button>
-      </div>
-      <div class="card">
-        <img src="https://images.samsung.com/is/image/samsung/p6pim/br/galaxy-s23/gallery/br-galaxy-s23-ultra-s918-sm-s918bzkgzto-thumb-535120190?$216_216_PNG$" alt="Samsung 2">
-        <div class="nome">Galaxy S11 Ultra</div>
-        <div class="preco">R$ 8099</div>
-        <div class="desconto">R$ 6479</div>
-        <button>Ver Detalhes</button>
-        <button>Adicionar ao Carrinho</button>
-      </div>
-      <div class="card">
-        <img src="https://images.samsung.com/is/image/samsung/p6pim/br/galaxy-s23/gallery/br-galaxy-s23-ultra-s918-sm-s918bzkgzto-thumb-535120190?$216_216_PNG$" alt="Samsung 3">
-        <div class="nome">Galaxy S12 Ultra</div>
-        <div class="preco">R$ 8199</div>
-        <div class="desconto">R$ 6559</div>
-        <button>Ver Detalhes</button>
-        <button>Adicionar ao Carrinho</button>
-      </div>
-      <div class="card">
-        <img src="https://images.samsung.com/is/image/samsung/p6pim/br/galaxy-s23/gallery/br-galaxy-s23-ultra-s918-sm-s918bzkgzto-thumb-535120190?$216_216_PNG$" alt="Samsung 4">
-        <div class="nome">Galaxy S13 Ultra</div>
-        <div class="preco">R$ 8299</div>
-        <div class="desconto">R$ 6639</div>
-        <button>Ver Detalhes</button>
-        <button>Adicionar ao Carrinho</button>
-      </div>
-      <div class="card">
-        <img src="https://images.samsung.com/is/image/samsung/p6pim/br/galaxy-s23/gallery/br-galaxy-s23-ultra-s918-sm-s918bzkgzto-thumb-535120190?$216_216_PNG$" alt="Samsung 5">
-        <div class="nome">Galaxy S14 Ultra</div>
-        <div class="preco">R$ 8399</div>
-        <div class="desconto">R$ 6719</div>
-        <button>Ver Detalhes</button>
-        <button>Adicionar ao Carrinho</button>
-      </div>
-      <div class="card">
-        <img src="https://images.samsung.com/is/image/samsung/p6pim/br/galaxy-s23/gallery/br-galaxy-s23-ultra-s918-sm-s918bzkgzto-thumb-535120190?$216_216_PNG$" alt="Samsung 6">
-        <div class="nome">Galaxy S15 Ultra</div>
-        <div class="preco">R$ 8499</div>
-        <div class="desconto">R$ 6799</div>
-        <button>Ver Detalhes</button>
-        <button>Adicionar ao Carrinho</button>
-      </div>
-      <div class="card">
-        <img src="https://images.samsung.com/is/image/samsung/p6pim/br/galaxy-s23/gallery/br-galaxy-s23-ultra-s918-sm-s918bzkgzto-thumb-535120190?$216_216_PNG$" alt="Samsung 7">
-        <div class="nome">Galaxy S16 Ultra</div>
-        <div class="preco">R$ 8599</div>
-        <div class="desconto">R$ 6879</div>
-        <button>Ver Detalhes</button>
-        <button>Adicionar ao Carrinho</button>
-      </div>
-      <div class="card">
-        <img src="https://images.samsung.com/is/image/samsung/p6pim/br/galaxy-s23/gallery/br-galaxy-s23-ultra-s918-sm-s918bzkgzto-thumb-535120190?$216_216_PNG$" alt="Samsung 8">
-        <div class="nome">Galaxy S17 Ultra</div>
-        <div class="preco">R$ 8699</div>
-        <div class="desconto">R$ 6959</div>
-        <button>Ver Detalhes</button>
-        <button>Adicionar ao Carrinho</button>
-      </div>
-      <div class="card">
-        <img src="https://images.samsung.com/is/image/samsung/p6pim/br/galaxy-s23/gallery/br-galaxy-s23-ultra-s918-sm-s918bzkgzto-thumb-535120190?$216_216_PNG$" alt="Samsung 9">
-        <div class="nome">Galaxy S18 Ultra</div>
-        <div class="preco">R$ 8799</div>
-        <div class="desconto">R$ 7039</div>
-        <button>Ver Detalhes</button>
-        <button>Adicionar ao Carrinho</button>
-      </div>
-      <div class="card">
-        <img src="https://images.samsung.com/is/image/samsung/p6pim/br/galaxy-s23/gallery/br-galaxy-s23-ultra-s918-sm-s918bzkgzto-thumb-535120190?$216_216_PNG$" alt="Samsung 10">
-        <div class="nome">Galaxy S19 Ultra</div>
-        <div class="preco">R$ 8899</div>
-        <div class="desconto">R$ 7119</div>
-        <button>Ver Detalhes</button>
-        <button>Adicionar ao Carrinho</button>
-      </div>
-    </div>
-  </section>
+<!-- SeÃ§Ã£o Samsung -->
+<h2>ðŸ“± LanÃ§amentos Samsung</h2>
+<div class="row">
+  <div class="card">
+    <img src="https://images.samsung.com/is/image/samsung/p6pim/br/2302/gallery/br-galaxy-s23-s911-sm-s911bzkgzto-535727647?$650_519_PNG$" alt="Galaxy S23">
+    <div class="nome">Galaxy S23</div>
+    <div class="preco-antigo">R$ 5.999</div>
+    <div class="preco-novo">R$ 4.799</div>
+    <button class="btn">Comprar</button>
+  </div>
+  <div class="card">
+    <img src="https://images.samsung.com/is/image/samsung/p6pim/br/galaxy-s24/gallery/br-galaxy-s24-sm-s921bzvazto-thumb-539137321?$216_216_PNG$" alt="Galaxy S24">
+    <div class="nome">Galaxy S24</div>
+    <div class="preco-antigo">R$ 6.299</div>
+    <div class="preco-novo">R$ 5.299</div>
+    <button class="btn">Comprar</button>
+  </div>
+  <!-- Adicione mais 8 modelos aqui... -->
+</div>
 
-  <!-- As demais marcas seriam colocadas aqui (Motorola, iPhone, Xiaomi, Redmi) da mesma forma -->
+<!-- SeÃ§Ã£o Motorola -->
+<h2>ðŸ“± LanÃ§amentos Motorola</h2>
+<div class="row">
+  <div class="card">
+    <img src="https://motorola-global-portal-pt.custhelp.com/euf/assets/images/moto/2024/moto-g84/moto-g84-gallery-1.jpg" alt="Moto G84">
+    <div class="nome">Moto G84</div>
+    <div class="preco-antigo">R$ 1.999</div>
+    <div class="preco-novo">R$ 1.599</div>
+    <button class="btn">Comprar</button>
+  </div>
+  <div class="card">
+    <img src="https://motorola-global-portal-pt.custhelp.com/euf/assets/images/moto/2024/moto-edge-40/moto-edge-40-gallery-2.jpg" alt="Edge 40">
+    <div class="nome">Edge 40</div>
+    <div class="preco-antigo">R$ 3.499</div>
+    <div class="preco-novo">R$ 3.099</div>
+    <button class="btn">Comprar</button>
+  </div>
+</div>
+
+<!-- SeÃ§Ã£o iPhone -->
+<h2>ðŸ“± LanÃ§amentos iPhone</h2>
+<div class="row">
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/I/71xb2xkN5qL._AC_SX679_.jpg" alt="iPhone 14 Pro">
+    <div class="nome">iPhone 14 Pro</div>
+    <div class="preco-antigo">R$ 9.999</div>
+    <div class="preco-novo">R$ 7.999</div>
+    <button class="btn">Comprar</button>
+  </div>
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/I/61bK6PMOC3L._AC_SX679_.jpg" alt="iPhone 15">
+    <div class="nome">iPhone 15</div>
+    <div class="preco-antigo">R$ 10.999</div>
+    <div class="preco-novo">R$ 8.999</div>
+    <button class="btn">Comprar</button>
+  </div>
+</div>
+
+<!-- SeÃ§Ã£o Xiaomi / Redmi -->
+<h2>ðŸ“± LanÃ§amentos Xiaomi / Redmi</h2>
+<div class="row">
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/I/71l7VZq-3xL._AC_SX679_.jpg" alt="Redmi Note 12">
+    <div class="nome">Redmi Note 12</div>
+    <div class="preco-antigo">R$ 1.699</div>
+    <div class="preco-novo">R$ 1.359</div>
+    <button class="btn">Comprar</button>
+  </div>
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/I/71f5Eu5lJSL._AC_SX679_.jpg" alt="Poco X5">
+    <div class="nome">Poco X5</div>
+    <div class="preco-antigo">R$ 2.999</div>
+    <div class="preco-novo">R$ 2.299</div>
+    <button class="btn">Comprar</button>
+  </div>
+</div>
 
 </body>
 </html>
