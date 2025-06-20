@@ -17,19 +17,20 @@
         }
         .header {
             text-align: center;
-            padding: 20px;
+            padding: 30px;
             background: linear-gradient(to right, #2a5298, #ff7e5f);
             width: 100%;
             color: white;
+            position: relative;
         }
         .header h1 {
             margin: 0;
-            font-size: 2.5em;
-            text-shadow: 0 0 10px #fff;
+            font-size: 3.5em; /* Aumentei o tamanho da logo */
+            text-shadow: 0 0 15px #fff;
         }
         .header h1 span {
             color: #fff;
-            text-shadow: 0 0 15px #00f7ff;
+            text-shadow: 0 0 20px #00f7ff;
         }
         .banner {
             text-align: center;
@@ -71,7 +72,8 @@
         .cart {
             position: absolute;
             top: 20px;
-            right: 20px;
+            left: 50%;
+            transform: translateX(-50%); /* Centraliza o carrinho */
             cursor: pointer;
         }
         .cart span {
@@ -81,7 +83,8 @@
         .cart-items {
             display: none;
             position: absolute;
-            right: 0;
+            left: 50%;
+            transform: translateX(-50%);
             top: 40px;
             background: rgba(255, 255, 255, 0.9);
             color: #000;
@@ -151,6 +154,10 @@
 <body>
     <div class="header">
         <h1><span>P</span>honeFrenzy</h1>
+        <div class="cart" id="cart">
+            <span>Carrinho (0)</span>
+            <div class="cart-items" id="cartItems"></div>
+        </div>
     </div>
     <div class="banner">
         <p>Aproveite até 20% de desconto nos últimos lançamentos!</p>
@@ -158,10 +165,6 @@
     <div class="search-bar">
         <input type="text" placeholder="Buscar modelo..." id="searchInput">
         <button onclick="searchProduct()">🔍</button>
-    </div>
-    <div class="cart" id="cart">
-        <span>Carrinho (0)</span>
-        <div class="cart-items" id="cartItems"></div>
     </div>
     <div class="products" id="productGrid">
         <div class="product-card">
@@ -211,6 +214,30 @@
             <h3>Moto Edge 40</h3>
             <p>R$ 2.499 <del>R$ 2.199</del></p>
             <button onclick="addToCart('Moto Edge 40', 2199)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="Galaxy Z Fold 5">
+            <h3>Galaxy Z Fold 5</h3>
+            <p>R$ 7.999 <del>R$ 7.499</del></p>
+            <button onclick="addToCart('Galaxy Z Fold 5', 7499)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="Moto Razr 40">
+            <h3>Moto Razr 40</h3>
+            <p>R$ 4.499 <del>R$ 4.199</del></p>
+            <button onclick="addToCart('Moto Razr 40', 4199)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="Samsung A54">
+            <h3>Samsung A54</h3>
+            <p>R$ 1.899 <del>R$ 1.699</del></p>
+            <button onclick="addToCart('Samsung A54', 1699)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="Xiaomi 13">
+            <h3>Xiaomi 13</h3>
+            <p>R$ 2.799 <del>R$ 2.499</del></p>
+            <button onclick="addToCart('Xiaomi 13', 2499)">Comprar</button>
         </div>
     </div>
 
