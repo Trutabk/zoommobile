@@ -1,119 +1,215 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ZOOMMOBILE</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; background: #f5f5f5; }
-    header { background: #007BFF; padding: 1rem; text-align: center; color: white; font-size: 1.8rem; font-weight: bold; }
-    .topbar { background: white; padding: 10px; display: flex; justify-content: space-between; align-items: center; }
-    .topbar input { width: 70%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; }
-    .topbar span { font-weight: bold; }
-    .banner { background: #007bff; color: white; padding: 10px; text-align: center; font-weight: bold; }
-    h2 { margin-left: 10px; margin-top: 20px; color: #333; }
-    .row { display: flex; overflow-x: auto; padding: 1rem; gap: 1rem; }
-    .card {
-      min-width: 180px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      padding: 10px;
-      text-align: center;
-      flex-shrink: 0;
-    }
-    .card img { width: 100%; height: 160px; object-fit: contain; }
-    .card .nome { font-weight: bold; margin: 0.5rem 0; }
-    .preco-antigo { color: #999; text-decoration: line-through; }
-    .preco-novo { color: #007BFF; font-weight: bold; font-size: 1.1rem; }
-    .btn { background: #007BFF; color: white; border: none; padding: 8px; border-radius: 6px; width: 100%; cursor: pointer; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhoneFrenzy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #1e3c72, #ff5e62);
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(to right, #2a5298, #ff7e5f);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 0 0 10px #fff;
+        }
+        .header h1 span {
+            color: #fff;
+            text-shadow: 0 0 15px #00f7ff;
+        }
+        .discount {
+            text-align: center;
+            color: #fff;
+            font-size: 1.1em;
+            margin: 10px 0;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+        }
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .search-bar input {
+            padding: 10px;
+            width: 300px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+        }
+        .search-bar button {
+            padding: 10px;
+            border: none;
+            background-color: #fff;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            color: #ff5e62;
+        }
+        .cart {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+        .cart span {
+            margin-left: 5px;
+            color: #fff;
+        }
+        .cart-items {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #000;
+            padding: 10px;
+            border-radius: 5px;
+            min-width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .cart:hover .cart-items {
+            display: block;
+        }
+        .products {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+        .product-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 15px;
+            text-align: center;
+            width: 180px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .product-card h3 {
+            margin: 10px 0;
+            font-size: 1.1em;
+            color: #e0e0e0;
+        }
+        .product-card p {
+            color: #ffd700;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        .product-card button {
+            padding: 8px;
+            background: linear-gradient(to right, #ff4500, #ff7e5f);
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+        }
+        .product-card button:hover {
+            background: linear-gradient(to right, #ff6347, #ff9f80);
+        }
+    </style>
 </head>
 <body>
+    <div class="header">
+        <h1><span>P</span>honeFrenzy</h1>
+    </div>
+    <div class="discount">
+        Aproveite até 20% de desconto nos últimos lançamentos!
+    </div>
+    <div class="search-bar">
+        <input type="text" placeholder="Buscar modelo..." id="searchInput">
+        <button onclick="searchProduct()">🔍</button>
+    </div>
+    <div class="cart" id="cart">
+        <span>Carrinho (0)</span>
+        <div class="cart-items" id="cartItems"></div>
+    </div>
+    <h2 style="text-align: center; color: #fff; text-shadow: 0 0 5px #000;">Lançamentos Samsung</h2>
+    <div class="products" id="samsungProducts">
+        <div class="product-card">
+            <img src="imagens/galaxy_s24.jpg" alt="Galaxy S24">
+            <h3>Galaxy S24</h3>
+            <p>R$ 1.599 <del>R$ 1.399</del></p>
+            <button onclick="addToCart('Galaxy S24', 1399)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="imagens/edge_40.jpg" alt="Edge 40">
+            <h3>Edge 40</h3>
+            <p>R$ 3.599 <del>R$ 3.499</del></p>
+            <button onclick="addToCart('Edge 40', 3499)">Comprar</button>
+        </div>
+    </div>
+    <h2 style="text-align: center; color: #fff; text-shadow: 0 0 5px #000;">Lançamentos Motorola</h2>
+    <div class="products" id="motorolaProducts">
+        <div class="product-card">
+            <img src="imagens/moto_g54.jpg" alt="Moto G54">
+            <h3>Moto G54</h3>
+            <p>R$ 1.699 <del>R$ 1.399</del></p>
+            <button onclick="addToCart('Moto G54', 1399)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="imagens/moto_g84.jpg" alt="Moto G84">
+            <h3>Moto G84</h3>
+            <p>R$ 1.599 <del>R$ 1.399</del></p>
+            <button onclick="addToCart('Moto G84', 1399)">Comprar</button>
+        </div>
+    </div>
 
-<header>ZOOMMOBILE</header>
-<div class="topbar">
-  <input type="text" placeholder="ðŸ” Buscar modelo..."/>
-  <span>ðŸ›’ Carrinho (0)</span>
-</div>
-<div class="banner">Aproveite atÃ© 20% de desconto nos Ãºltimos lanÃ§amentos</div>
+    <script>
+        let cartCount = 0;
+        let cartItems = [];
+        const cartElement = document.getElementById('cart');
+        const cartItemsElement = document.getElementById('cartItems');
 
-<!-- SeÃ§Ã£o Samsung -->
-<h2>ðŸ“± LanÃ§amentos Samsung</h2>
-<div class="row">
-  <div class="card">
-    <img src="https://images.samsung.com/is/image/samsung/p6pim/br/2302/gallery/br-galaxy-s23-s911-sm-s911bzkgzto-535727647?$650_519_PNG$" alt="Galaxy S23">
-    <div class="nome">Galaxy S23</div>
-    <div class="preco-antigo">R$ 5.999</div>
-    <div class="preco-novo">R$ 4.799</div>
-    <button class="btn">Comprar</button>
-  </div>
-  <div class="card">
-    <img src="https://images.samsung.com/is/image/samsung/p6pim/br/galaxy-s24/gallery/br-galaxy-s24-sm-s921bzvazto-thumb-539137321?$216_216_PNG$" alt="Galaxy S24">
-    <div class="nome">Galaxy S24</div>
-    <div class="preco-antigo">R$ 6.299</div>
-    <div class="preco-novo">R$ 5.299</div>
-    <button class="btn">Comprar</button>
-  </div>
-  <!-- Adicione mais 8 modelos aqui... -->
-</div>
+        function addToCart(product, price) {
+            cartCount++;
+            cartItems.push({ name: product, price: price });
+            updateCart();
+            alert(`${product} adicionado ao carrinho!`);
+        }
 
-<!-- SeÃ§Ã£o Motorola -->
-<h2>ðŸ“± LanÃ§amentos Motorola</h2>
-<div class="row">
-  <div class="card">
-    <img src="https://motorola-global-portal-pt.custhelp.com/euf/assets/images/moto/2024/moto-g84/moto-g84-gallery-1.jpg" alt="Moto G84">
-    <div class="nome">Moto G84</div>
-    <div class="preco-antigo">R$ 1.999</div>
-    <div class="preco-novo">R$ 1.599</div>
-    <button class="btn">Comprar</button>
-  </div>
-  <div class="card">
-    <img src="https://motorola-global-portal-pt.custhelp.com/euf/assets/images/moto/2024/moto-edge-40/moto-edge-40-gallery-2.jpg" alt="Edge 40">
-    <div class="nome">Edge 40</div>
-    <div class="preco-antigo">R$ 3.499</div>
-    <div class="preco-novo">R$ 3.099</div>
-    <button class="btn">Comprar</button>
-  </div>
-</div>
+        function updateCart() {
+            cartElement.innerHTML = `<span>Carrinho (${cartCount})</span><div class="cart-items" id="cartItems">` +
+                cartItems.map((item, index) => 
+                    `<p>${item.name} - R$ ${item.price} <button onclick="removeFromCart(${index})">Remover</button></p>`
+                ).join('') + `</div>`;
+        }
 
-<!-- SeÃ§Ã£o iPhone -->
-<h2>ðŸ“± LanÃ§amentos iPhone</h2>
-<div class="row">
-  <div class="card">
-    <img src="https://m.media-amazon.com/images/I/71xb2xkN5qL._AC_SX679_.jpg" alt="iPhone 14 Pro">
-    <div class="nome">iPhone 14 Pro</div>
-    <div class="preco-antigo">R$ 9.999</div>
-    <div class="preco-novo">R$ 7.999</div>
-    <button class="btn">Comprar</button>
-  </div>
-  <div class="card">
-    <img src="https://m.media-amazon.com/images/I/61bK6PMOC3L._AC_SX679_.jpg" alt="iPhone 15">
-    <div class="nome">iPhone 15</div>
-    <div class="preco-antigo">R$ 10.999</div>
-    <div class="preco-novo">R$ 8.999</div>
-    <button class="btn">Comprar</button>
-  </div>
-</div>
+        function removeFromCart(index) {
+            cartItems.splice(index, 1);
+            cartCount--;
+            updateCart();
+            alert('Item removido do carrinho!');
+        }
 
-<!-- SeÃ§Ã£o Xiaomi / Redmi -->
-<h2>ðŸ“± LanÃ§amentos Xiaomi / Redmi</h2>
-<div class="row">
-  <div class="card">
-    <img src="https://m.media-amazon.com/images/I/71l7VZq-3xL._AC_SX679_.jpg" alt="Redmi Note 12">
-    <div class="nome">Redmi Note 12</div>
-    <div class="preco-antigo">R$ 1.699</div>
-    <div class="preco-novo">R$ 1.359</div>
-    <button class="btn">Comprar</button>
-  </div>
-  <div class="card">
-    <img src="https://m.media-amazon.com/images/I/71f5Eu5lJSL._AC_SX679_.jpg" alt="Poco X5">
-    <div class="nome">Poco X5</div>
-    <div class="preco-antigo">R$ 2.999</div>
-    <div class="preco-novo">R$ 2.299</div>
-    <button class="btn">Comprar</button>
-  </div>
-</div>
-
+        function searchProduct() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const products = document.querySelectorAll('.product-card h3');
+            products.forEach(product => {
+                const productName = product.textContent.toLowerCase();
+                const card = product.parentElement;
+                card.style.display = productName.includes(input) ? 'block' : 'none';
+            });
+        }
+    </script>
 </body>
 </html>
