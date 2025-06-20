@@ -25,7 +25,7 @@
         }
         .header h1 {
             margin: 0;
-            font-size: 3.5em; /* Aumentei o tamanho da logo */
+            font-size: 3.5em;
             text-shadow: 0 0 15px #fff;
         }
         .header h1 span {
@@ -72,8 +72,7 @@
         .cart {
             position: absolute;
             top: 20px;
-            left: 50%;
-            transform: translateX(-50%); /* Centraliza o carrinho */
+            right: 20px; /* Movido para a direita, afastado da logo */
             cursor: pointer;
         }
         .cart span {
@@ -83,8 +82,7 @@
         .cart-items {
             display: none;
             position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+            right: 0;
             top: 40px;
             background: rgba(255, 255, 255, 0.9);
             color: #000;
@@ -167,6 +165,7 @@
         <button onclick="searchProduct()">🔍</button>
     </div>
     <div class="products" id="productGrid">
+        <!-- Celulares existentes -->
         <div class="product-card">
             <img src="https://via.placeholder.com/200x300" alt="Galaxy S24">
             <h3>Galaxy S24</h3>
@@ -238,6 +237,164 @@
             <h3>Xiaomi 13</h3>
             <p>R$ 2.799 <del>R$ 2.499</del></p>
             <button onclick="addToCart('Xiaomi 13', 2499)">Comprar</button>
+        </div>
+
+        <!-- Novos 30 celulares -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="iPhone 14">
+            <h3>iPhone 14</h3>
+            <p>R$ 4.999 <del>R$ 4.499</del></p>
+            <button onclick="addToCart('iPhone 14', 4499)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="Huawei P60">
+            <h3>Huawei P60</h3>
+            <p>R$ 2.899 <del>R$ 2.599</del></p>
+            <button onclick="addToCart('Huawei P60', 2599)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="OnePlus 11">
+            <h3>OnePlus 11</h3>
+            <p>R$ 3.499 <del>R$ 3.199</del></p>
+            <button onclick="addToCart('OnePlus 11', 3199)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="Sony Xperia 5 V">
+            <h3>Sony Xperia 5 V</h3>
+            <p>R$ 4.199 <del>R$ 3.899</del></p>
+            <button onclick="addToCart('Sony Xperia 5 V', 3899)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="Google Pixel 7">
+            <h3>Google Pixel 7</h3>
+            <p>R$ 3.299 <del>R$ 2.999</del></p>
+            <button onclick="addToCart('Google Pixel 7', 2999)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="Oppo Find X5">
+            <h3>Oppo Find X5</h3>
+            <p>R$ 2.799 <del>R$ 2.499</del></p>
+            <button onclick="addToCart('Oppo Find X5', 2499)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="Realme GT Neo 3">
+            <h3>Realme GT Neo 3</h3>
+            <p>R$ 1.999 <del>R$ 1.799</del></p>
+            <button onclick="addToCart('Realme GT Neo 3', 1799)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="Nokia G60">
+            <h3>Nokia G60</h3>
+            <p>R$ 1.499 <del>R$ 1.299</del></p>
+            <button onclick="addToCart('Nokia G60', 1299)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="LG Velvet">
+            <h3>LG Velvet</h3>
+            <p>R$ 2.199 <del>R$ 1.999</del></p>
+            <button onclick="addToCart('LG Velvet', 1999)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="Asus ROG Phone 6">
+            <h3>Asus ROG Phone 6</h3>
+            <p>R$ 4.799 <del>R$ 4.499</del></p>
+            <button onclick="addToCart('Asus ROG Phone 6', 4499)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="Vivo X90">
+            <h3>Vivo X90</h3>
+            <p>R$ 3.099 <del>R$ 2.799</del></p>
+            <button onclick="addToCart('Vivo X90', 2799)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="Tecno Phantom X2">
+            <h3>Tecno Phantom X2</h3>
+            <p>R$ 2.499 <del>R$ 2.199</del></p>
+            <button onclick="addToCart('Tecno Phantom X2', 2199)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="Honor 90">
+            <h3>Honor 90</h3>
+            <p>R$ 2.399 <del>R$ 2.099</del></p>
+            <button onclick="addToCart('Honor 90', 2099)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="ZTE Axon 40">
+            <h3>ZTE Axon 40</h3>
+            <p>R$ 2.199 <del>R$ 1.999</del></p>
+            <button onclick="addToCart('ZTE Axon 40', 1999)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="Poco F5">
+            <h3>Poco F5</h3>
+            <p>R$ 2.099 <del>R$ 1.899</del></p>
+            <button onclick="addToCart('Poco F5', 1899)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="Redmi Note 12">
+            <h3>Redmi Note 12</h3>
+            <p>R$ 1.599 <del>R$ 1.399</del></p>
+            <button onclick="addToCart('Redmi Note 12', 1399)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="iPhone 13">
+            <h3>iPhone 13</h3>
+            <p>R$ 4.299 <del>R$ 3.999</del></p>
+            <button onclick="addToCart('iPhone 13', 3999)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="Huawei Mate 50">
+            <h3>Huawei Mate 50</h3>
+            <p>R$ 3.499 <del>R$ 3.199</del></p>
+            <button onclick="addToCart('Huawei Mate 50', 3199)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="OnePlus Nord 3">
+            <h3>OnePlus Nord 3</h3>
+            <p>R$ 2.599 <del>R$ 2.399</del></p>
+            <button onclick="addToCart('OnePlus Nord 3', 2399)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="Sony Xperia 1 V">
+            <h3>Sony Xperia 1 V</h3>
+            <p>R$ 5.499 <del>R$ 5.199</del></p>
+            <button onclick="addToCart('Sony Xperia 1 V', 5199)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="Google Pixel 7 Pro">
+            <h3>Google Pixel 7 Pro</h3>
+            <p>R$ 4.199 <del>R$ 3.899</del></p>
+            <button onclick="addToCart('Google Pixel 7 Pro', 3899)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="Oppo Reno 8">
+            <h3>Oppo Reno 8</h3>
+            <p>R$ 2.399 <del>R$ 2.199</del></p>
+            <button onclick="addToCart('Oppo Reno 8', 2199)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="Realme GT 2">
+            <h3>Realme GT 2</h3>
+            <p>R$ 2.299 <del>R$ 2.099</del></p>
+            <button onclick="addToCart('Realme GT 2', 2099)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="Nokia X30">
+            <h3>Nokia X30</h3>
+            <p>R$ 1.699 <del>R$ 1.499</del></p>
+            <button onclick="addToCart('Nokia X30', 1499)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="LG Wing">
+            <h3>LG Wing</h3>
+            <p>R$ 2.799 <del>R$ 2.499</del></p>
+            <button onclick="addToCart('LG Wing', 2499)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="Asus Zenfone 9">
+            <h3>Asus Zenfone 9</h3>
+            <p>R$ 2.999 <del>R$ 2.699</del></p>
+            <button onclick="addToCart('Asus Zenfone 9', 2699)">Comprar</button>
         </div>
     </div>
 
