@@ -11,11 +11,15 @@
             color: white;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .header {
             text-align: center;
             padding: 20px;
             background: linear-gradient(to right, #2a5298, #ff7e5f);
+            width: 100%;
         }
         .header h1 {
             margin: 0;
@@ -33,15 +37,19 @@
             margin: 10px 0;
             background: rgba(255, 255, 255, 0.1);
             padding: 10px;
+            width: 90%;
+            max-width: 600px;
         }
         .search-bar {
             display: flex;
             justify-content: center;
             margin: 20px 0;
+            width: 90%;
+            max-width: 600px;
         }
         .search-bar input {
             padding: 10px;
-            width: 300px;
+            width: 100%;
             border: none;
             border-radius: 5px 0 0 5px;
             outline: none;
@@ -85,6 +93,8 @@
             flex-wrap: wrap;
             gap: 20px;
             padding: 20px;
+            width: 90%;
+            max-width: 800px;
         }
         .product-card {
             background: rgba(255, 255, 255, 0.1);
@@ -94,6 +104,9 @@
             width: 180px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
             transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .product-card:hover {
             transform: scale(1.05);
@@ -122,9 +135,17 @@
             cursor: pointer;
             width: 100%;
             font-weight: bold;
+            margin-top: auto;
         }
         .product-card button:hover {
             background: linear-gradient(to right, #ff6347, #ff9f80);
+        }
+        h2 {
+            text-align: center;
+            color: #fff;
+            text-shadow: 0 0 5px #000;
+            width: 90%;
+            max-width: 800px;
         }
     </style>
 </head>
@@ -143,31 +164,31 @@
         <span>Carrinho (0)</span>
         <div class="cart-items" id="cartItems"></div>
     </div>
-    <h2 style="text-align: center; color: #fff; text-shadow: 0 0 5px #000;">Lançamentos Samsung</h2>
+    <h2>Lançamentos Samsung</h2>
     <div class="products" id="samsungProducts">
         <div class="product-card">
-            <img src="imagens/galaxy_s24.jpg" alt="Galaxy S24">
+            <img src="https://via.placeholder.com/150" alt="Galaxy S24">
             <h3>Galaxy S24</h3>
             <p>R$ 1.599 <del>R$ 1.399</del></p>
             <button onclick="addToCart('Galaxy S24', 1399)">Comprar</button>
         </div>
         <div class="product-card">
-            <img src="imagens/edge_40.jpg" alt="Edge 40">
+            <img src="https://via.placeholder.com/150" alt="Edge 40">
             <h3>Edge 40</h3>
             <p>R$ 3.599 <del>R$ 3.499</del></p>
             <button onclick="addToCart('Edge 40', 3499)">Comprar</button>
         </div>
     </div>
-    <h2 style="text-align: center; color: #fff; text-shadow: 0 0 5px #000;">Lançamentos Motorola</h2>
+    <h2>Lançamentos Motorola</h2>
     <div class="products" id="motorolaProducts">
         <div class="product-card">
-            <img src="imagens/moto_g54.jpg" alt="Moto G54">
+            <img src="https://via.placeholder.com/150" alt="Moto G54">
             <h3>Moto G54</h3>
             <p>R$ 1.699 <del>R$ 1.399</del></p>
             <button onclick="addToCart('Moto G54', 1399)">Comprar</button>
         </div>
         <div class="product-card">
-            <img src="imagens/moto_g84.jpg" alt="Moto G84">
+            <img src="https://via.placeholder.com/150" alt="Moto G84">
             <h3>Moto G84</h3>
             <p>R$ 1.599 <del>R$ 1.399</del></p>
             <button onclick="addToCart('Moto G84', 1399)">Comprar</button>
