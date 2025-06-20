@@ -89,6 +89,8 @@
             border-radius: 5px;
             min-width: 200px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-height: 200px;
+            overflow-y: auto;
         }
         .cart:hover .cart-items {
             display: block;
@@ -186,6 +188,30 @@
             <p>R$ 1.599 <del>R$ 1.399</del></p>
             <button onclick="addToCart('Moto G84', 1399)">Comprar</button>
         </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="Galaxy S23+">
+            <h3>Galaxy S23+</h3>
+            <p>R$ 2.999 <del>R$ 2.699</del></p>
+            <button onclick="addToCart('Galaxy S23+', 2699)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="Moto G64">
+            <h3>Moto G64</h3>
+            <p>R$ 1.799 <del>R$ 1.599</del></p>
+            <button onclick="addToCart('Moto G64', 1599)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="Edge 50">
+            <h3>Edge 50</h3>
+            <p>R$ 3.799 <del>R$ 3.599</del></p>
+            <button onclick="addToCart('Edge 50', 3599)">Comprar</button>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200x300" alt="Moto Edge 40">
+            <h3>Moto Edge 40</h3>
+            <p>R$ 2.499 <del>R$ 2.199</del></p>
+            <button onclick="addToCart('Moto Edge 40', 2199)">Comprar</button>
+        </div>
     </div>
 
     <script>
@@ -198,21 +224,19 @@
             cartCount++;
             cartItems.push({ name: product, price: price });
             updateCart();
-            alert(`${product} adicionado ao carrinho!`);
         }
 
         function updateCart() {
             cartElement.innerHTML = `<span>Carrinho (${cartCount})</span><div class="cart-items" id="cartItems">` +
-                cartItems.map((item, index) => 
+                (cartItems.length > 0 ? cartItems.map((item, index) => 
                     `<p>${item.name} - R$ ${item.price} <button onclick="removeFromCart(${index})">Remover</button></p>`
-                ).join('') + `</div>`;
+                ).join('') : '<p>Carrinho vazio</p>') + `</div>`;
         }
 
         function removeFromCart(index) {
             cartItems.splice(index, 1);
             cartCount--;
             updateCart();
-            alert('Item removido do carrinho!');
         }
 
         function searchProduct() {
