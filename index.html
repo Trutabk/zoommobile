@@ -7,8 +7,8 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #1e3c72, #ff5e62);
-            color: white;
+            background: linear-gradient(to bottom, #e6f0fa, #b3d9ff);
+            color: #333;
             margin: 0;
             padding: 0;
             display: flex;
@@ -20,6 +20,7 @@
             padding: 20px;
             background: linear-gradient(to right, #2a5298, #ff7e5f);
             width: 100%;
+            color: white;
         }
         .header h1 {
             margin: 0;
@@ -30,15 +31,20 @@
             color: #fff;
             text-shadow: 0 0 15px #00f7ff;
         }
-        .discount {
+        .banner {
             text-align: center;
-            color: #fff;
-            font-size: 1.1em;
-            margin: 10px 0;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 10px;
+            background: #2a5298;
+            color: white;
+            padding: 20px;
             width: 90%;
-            max-width: 600px;
+            max-width: 1200px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .banner p {
+            margin: 5px 0;
+            font-size: 1.2em;
         }
         .search-bar {
             display: flex;
@@ -88,21 +94,19 @@
             display: block;
         }
         .products {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
             padding: 20px;
             width: 90%;
-            max-width: 800px;
+            max-width: 1200px;
         }
         .product-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
             padding: 15px;
             text-align: center;
-            width: 180px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s;
             display: flex;
             flex-direction: column;
@@ -118,17 +122,17 @@
         }
         .product-card h3 {
             margin: 10px 0;
-            font-size: 1.1em;
-            color: #e0e0e0;
+            font-size: 1.2em;
+            color: #2a5298;
         }
         .product-card p {
-            color: #ffd700;
+            color: #ff4500;
             font-weight: bold;
             margin: 5px 0;
         }
         .product-card button {
             padding: 8px;
-            background: linear-gradient(to right, #ff4500, #ff7e5f);
+            background: #ff4500;
             border: none;
             color: white;
             border-radius: 5px;
@@ -138,14 +142,7 @@
             margin-top: auto;
         }
         .product-card button:hover {
-            background: linear-gradient(to right, #ff6347, #ff9f80);
-        }
-        h2 {
-            text-align: center;
-            color: #fff;
-            text-shadow: 0 0 5px #000;
-            width: 90%;
-            max-width: 800px;
+            background: #ff6347;
         }
     </style>
 </head>
@@ -153,8 +150,8 @@
     <div class="header">
         <h1><span>P</span>honeFrenzy</h1>
     </div>
-    <div class="discount">
-        Aproveite até 20% de desconto nos últimos lançamentos!
+    <div class="banner">
+        <p>Aproveite até 20% de desconto nos últimos lançamentos!</p>
     </div>
     <div class="search-bar">
         <input type="text" placeholder="Buscar modelo..." id="searchInput">
@@ -164,31 +161,27 @@
         <span>Carrinho (0)</span>
         <div class="cart-items" id="cartItems"></div>
     </div>
-    <h2>Lançamentos Samsung</h2>
-    <div class="products" id="samsungProducts">
+    <div class="products" id="productGrid">
         <div class="product-card">
-            <img src="https://via.placeholder.com/150" alt="Galaxy S24">
+            <img src="https://via.placeholder.com/200x300" alt="Galaxy S24">
             <h3>Galaxy S24</h3>
             <p>R$ 1.599 <del>R$ 1.399</del></p>
             <button onclick="addToCart('Galaxy S24', 1399)">Comprar</button>
         </div>
         <div class="product-card">
-            <img src="https://via.placeholder.com/150" alt="Edge 40">
+            <img src="https://via.placeholder.com/200x300" alt="Edge 40">
             <h3>Edge 40</h3>
             <p>R$ 3.599 <del>R$ 3.499</del></p>
             <button onclick="addToCart('Edge 40', 3499)">Comprar</button>
         </div>
-    </div>
-    <h2>Lançamentos Motorola</h2>
-    <div class="products" id="motorolaProducts">
         <div class="product-card">
-            <img src="https://via.placeholder.com/150" alt="Moto G54">
+            <img src="https://via.placeholder.com/200x300" alt="Moto G54">
             <h3>Moto G54</h3>
             <p>R$ 1.699 <del>R$ 1.399</del></p>
             <button onclick="addToCart('Moto G54', 1399)">Comprar</button>
         </div>
         <div class="product-card">
-            <img src="https://via.placeholder.com/150" alt="Moto G84">
+            <img src="https://via.placeholder.com/200x300" alt="Moto G84">
             <h3>Moto G84</h3>
             <p>R$ 1.599 <del>R$ 1.399</del></p>
             <button onclick="addToCart('Moto G84', 1399)">Comprar</button>
